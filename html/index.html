@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast shop Tn</title>
+
+    <link rel="icon" type="image/x-icon" href="/img/logo-transparent-png.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous" />
+  </head>
+  <body class="overflow-x-hidden">
+    <header class="d-flex align-items-center justify-content-center fixed-top">
+      <nav
+        class="navbar navbar-expand-lg navbar-light container d-flex align-items-center justify-content-center flex-row flex-nowrap justify-content-between">
+        <button class="navbar-toggler ms-2" type="button" id="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-brand mt-2 me-5">
+          <a href="#"
+            ><img src="/img/logo-transparent-png.png" class="logo" alt=""
+          /></a>
+        </div>
+        <div class="sidebar" id="sidebar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="/html/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/html/Shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="openabout()">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/html/Contact.html">Contact</a>
+            </li>
+          </ul>
+
+          <div id="searchbar" class="mx-lg-4">
+            <input class="searchinput" id="search-input" type="text" /><i
+              class="bi bi-search"></i>
+            <section id="product-list-search"></section>
+          </div>
+          <ul class="social-icons mx-4">
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-behance"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-sketch"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="shopping-cart">
+          <span style="font-size: medium">Your Carte </span>
+          <div class="sum-prices">
+            <br />
+            <i class="fas fa-shopping-cart shoppingCartButton"
+              ><i id="totalitems"></i
+            ></i>
+
+            <h6 id="sum-prices">0</h6>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      <video class="w-100" autoplay loop>
+        <source
+          src="/back/Vidéo Full HD 1920x1080  px.mp4"
+          type="video/mp4" /></video
+      ><button class="button-85">Shop Now</button>
+    </div>
+
+    <button id="scrolltotop"></button>
+
+    <div class="producstOnCart hide">
+      <div class="overlay"></div>
+      <div class="top">
+        <button onclick="closeCart()" type="button" class="closeButton">
+          X
+        </button>
+        <h3>Cart</h3>
+      </div>
+      <ul id="buyItems">
+        <!-- <li class="buyItem">
+                                                                                            <img src="Images/producs-images/Mobiles/galaxynote10.png">
+                                                                                            <div>
+                                                                                                <h5>Products Name</h5>
+                                                                                                <h6>$199</h6>
+                                                                                                <div>
+                                                                                                    <button>-</button>
+                                                                                                    <span class="countOfProduct">1</span>
+                                                                                                    <button>+</button>
+                                                                                                </div>
+                                                                                </div>
+                                        </li> -->
+      </ul>
+      <a href="cart.html"><button class="btn checkout">Check out</button></a>
+    </div>
+    <section id="feature">
+      <div class="fe-box">
+        <img src="/img/features/f1.png" />
+        <h6>Free Shipping</h6>
+      </div>
+      <div class="fe-box">
+        <img src="/img/features/f2.png" />
+        <h6>Online Order</h6>
+      </div>
+      <div class="fe-box">
+        <img src="/img/features/f3.png" />
+        <h6>Save Money</h6>
+      </div>
+      <div class="fe-box">
+        <img src="/img/features/f4.png" />
+        <h6>Promotions</h6>
+      </div>
+      <div class="fe-box">
+        <img src="/img/features/f5.png" />
+        <h6>Happy Sell</h6>
+      </div>
+      <div class="fe-box">
+        <a onclick="Contact()">
+          <img src="/img/features/f6.png" />
+          <h6>F24/8 Support</h6>
+        </a>
+      </div>
+    </section>
+    <div class="my-4">
+      <p class="h5 my-3">Featured Products</p>
+      <h1 class="fw-bold fs-4">Winter Collection New Morden Design</h1>
+    </div>
+
+    <section id="product12345" class="listproduct"></section>
+
+    <section id="banner" class="section-f">
+      <buble>
+        <div class="ball"></div>
+        <div class="shadow"></div>
+      </buble>
+
+      <div class="main-icon">
+        <img class="bottom-logo" src="/img/logo-transparent-png.png" />
+
+        <a href="https://www.facebook.com/Fast-Shop-TN-108914238494838"
+          ><img
+            class="icon-social"
+            src="/img/icon/social/icons8-facebook-96.png"
+        /></a>
+        <a href="https://www.messenger.com/t/100047844653542/"
+          ><img
+            class="icon-social"
+            src="/img/icon/social/icons8-facebook-messenger-96.png"
+        /></a>
+        <a href="https://www.instagram.com/fast.shoptn/">
+          <img
+            class="icon-social"
+            src="/img/icon/social/icons8-instagram-96.png"
+        /></a>
+        <img
+          class="icon-social"
+          id="phone"
+          src="/img/icon/social/icons8-whatsapp-96.png" />
+        <div class="contact-b"><h5>27768325</h5></div>
+      </div>
+
+      <span> Powerd By Noussaier</span>
+    </section>
+    <section id="about">
+      <div>
+        <button onclick="closeabout()">X</button>
+        <h7>About Us</h7>
+        <span>New Shop Project </span>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+    <script type="module" defer src="/js/Home.js"></script>
+    <script src="/js/shopsr.js"></script>
+    <script src="/js/products.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

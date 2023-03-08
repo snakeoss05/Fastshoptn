@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast shop Tn</title>
+
+    <link rel="icon" type="image/x-icon" href="/img/logo-transparent-png.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous" />
+  </head>
+<body>
+    <header class="d-flex align-items-center justify-content-center fixed-top">
+      <nav
+        class="navbar navbar-expand-lg navbar-light container d-flex align-items-center justify-content-center flex-row flex-nowrap justify-content-between">
+        <button class="navbar-toggler ms-2" type="button" id="navbar-toggler">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-brand mt-2 me-5">
+          <a href="#"
+            ><img src="/img/logo-transparent-png.png" class="logo" alt=""
+          /></a>
+        </div>
+        <div class="sidebar" id="sidebar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="/html/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/html/Shop.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="openabout()">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/html/Contact.html">Contact</a>
+            </li>
+          </ul>
+
+          <div id="searchbar" class="mx-lg-4">
+            <input class="searchinput" id="search-input" type="text" /><i
+              class="bi bi-search"></i>
+            <section id="product-list-search"></section>
+          </div>
+          <ul class="social-icons mx-4">
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-behance"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="fab fa-sketch"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="shopping-cart">
+          <span style="font-size: medium">Your Carte </span>
+          <div class="sum-prices">
+            <br />
+            <i class="fas fa-shopping-cart shoppingCartButton"
+              ><i id="totalitems"></i
+            ></i>
+
+            <h6 id="sum-prices">0</h6>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="producstOnCart hide">
+        <div class="overlay"></div>
+        <div class="top">
+          <button onclick="closeCart()" type="button" class="closeButton">X</button>
+            <h3>Cart</h3>
+        </div>
+        <ul id="buyItems">
+           
+            <!-- <li class="buyItem">
+                                                                                            <img src="Images/producs-images/Mobiles/galaxynote10.png">
+                                                                                            <div>
+                                                                                                <h5>Products Name</h5>
+                                                                                                <h6>$199</h6>
+                                                                                                <div>
+                                                                                                    <button>-</button>
+                                                                                                    <span class="countOfProduct">1</span>
+                                                                                                    <button>+</button>
+                                                                                                </div>
+                                                                                </div>
+                                        </li> -->
+        </ul>
+        <a href="cart.html"><button class="btn checkout ">Check out</button></a>
+    </div>
+    
+    <section id="cart-header">
+        <h4 class="mt-5">Trade-in-offer</h4>
+        <h2>Super value deals</h2>
+        <section class="container-fluid d-flex flex-column flex-lg-row position-relative w-100 p-4" >  
+          <div class="d-flex align-items-cneter flex-column p-5 bg-light m-2 m-lg-5 rounded-5 position-relative w-lg-50 w-100" >
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                <span class="cart-price cart-header cart-column" >SIZE</span>
+            </div>
+            <div class="cart-items">
+                <div id="itemp" ></div>
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span  id="fsum-prices">0</span>
+            </div>
+            <button  id="buyitem"  class="btn btn-primary btn-purchase "  type="button">PURCHASE</button>
+           
+        </div>
+    <div class=" d-flex align-items-cneter flex-column p-5 bg-light m-2 m-lg-5 rounded-5 position-relative w-lg-50 w-100">
+        <form>
+            
+    
+        </form>
+    </div></section>
+    </section>
+    
+  <section class="hidden"> <div id="product123" >
+    
+  </div></section>
+   
+
+  <div id="over"><div class="tyforbuy">ty for buying :) will contact u soon<button id="closi">X</button></div></div>
+
+
+
+<section id="banner" class="section-f">
+    <buble>
+        <div class="ball">
+        </div>
+        <div class="shadow"></div>
+        
+        </buble>
+
+        <div class="main-icon">
+            <img class="bottom-logo" src="/img/logo-transparent-png.png">
+            <a onclick="facebook()"></a>
+            <img class="icon-social" onclick="facebook()" src="/img/icon/social/icons8-facebook-96.png">
+            <img class="icon-social" src="/img/icon/social/icons8-facebook-messenger-96.png">
+            <img class="icon-social" onclick="instagram()" src="/img/icon/social/icons8-instagram-96.png">
+            <img class="icon-social" id="phone" src="/img/icon/social/icons8-whatsapp-96.png">
+            <div class="contact-b"><h5>27768325</h5></div>
+           
+             
+    </div>
+
+
+    
+<span> Powerd By Noussaier</span>
+  
+</div>
+
+
+</div>
+
+</section>
+<section id="about">
+    <div>
+        <button onclick="closeabout()">X</button>
+        <h7>About Us</h7>
+        <span>New Shop Project </span>
+    </div>
+
+
+</section>
+
+<script src="/js/shopsr.js"></script>
+<script src="/js/products.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
